@@ -26,7 +26,7 @@ async function verifConnection() {
     try {
         await sequelize.authenticate()
         console.log('Succesful DB connection')
-        await sequelize.sync()
+        await sequelize.sync({force: true})
     } catch(error) {
         console.error(error)
     }
